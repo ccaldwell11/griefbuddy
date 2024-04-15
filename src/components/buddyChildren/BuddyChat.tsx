@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import io from 'socket.io-client';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Heading, Center, Container } from '@chakra-ui/react';
 
 const socket = io('http://localhost:3000');
 
@@ -48,14 +48,12 @@ function BuddyChat() {
 
   return (
     <ChakraProvider>
-      <div>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/buddy">Buddies</Link>
-        </li>
-        <h1>Buddy Chat</h1>
+      <Center>
+        <Heading size="3xl" color="blue.200">
+          Buddy Chat
+        </Heading>
+      </Center>
+      <Container maxW="7xl">
         <input
           type="text"
           placeholder="BuddyPair ID"
@@ -78,14 +76,13 @@ function BuddyChat() {
         </div>
         <input
           type="text"
-          placeholder="Type message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
         <button type="button" onClick={handleMessage}>
           Send
         </button>
-      </div>
+      </Container>
     </ChakraProvider>
   );
 }

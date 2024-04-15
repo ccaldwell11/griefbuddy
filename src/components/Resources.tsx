@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 function Resources() {
   return (
     <div>
-      <Link to="/home">Home</Link>
+      <Link to="/home" style={{ fontSize: '55px' }}>
+        ⌂
+      </Link>
       <h1>Resources</h1>
     </div>
   );

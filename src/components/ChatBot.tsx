@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 function ChatBot() {
   return (
     <div>
-      <Link to="/home">Home</Link>
+      <Link to="/home" style={{ fontSize: '55px' }}>
+        ⌂
+      </Link>
       <h1>Chat Bot</h1>
     </div>
   );
