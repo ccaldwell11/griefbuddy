@@ -31,8 +31,21 @@ import {
 } from '@chakra-ui/react';
 
 function Profile() {
+  type UserType = {
+    emConNum: String;
+    emConRelationship: String;
+    emConName: String;
+    currMood: String;
+    agee: String;
+    googleId: String;
+    name: String;
+    myLocation: String;
+    myPhoneNumber: String;
+    preferredName: String;
+  };
+
   const [googId, setGoogId] = useState('');
-  const [userObj, setUserObj] = useState('');
+  const [userObj, setUserObj] = useState({} as UserType);
   const [friendName, setFriendName] = useState('Halle Bot');
   const [friendNumber, setFriendNumber] = useState('504-XXX-XXXX');
   const [friendRelationship, setFriendRelationship] = useState('Besties?');
@@ -115,19 +128,9 @@ function Profile() {
             marginBottom={'150px'}
             padding={'40px'}
           >
-            <GridItem
-              width={'300px'}
-              colSpan={1}
-              bg="blue.200"
-              h="816px"
-              borderRadius={'15px'}
-            >
+            <GridItem width={'300px'} colSpan={1} bg="blue.200" h="816px" borderRadius={'15px'}>
               <Center padding={'25px'}>
-                <Avatar
-                  name="Kola Tioluwani"
-                  size="xl"
-                  src="https://bit.ly/tioluwani-kolawole"
-                />
+                <Avatar name="Kola Tioluwani" size="xl" src="https://bit.ly/tioluwani-kolawole" />
               </Center>
               <Center>
                 <h3>{userObj.name}</h3>
@@ -242,9 +245,7 @@ function Profile() {
                         <CardBody>
                           <Stack divider={<StackDivider />} spacing="4">
                             <Box>
-                              <h4 style={{ color: 'orange' }}>
-                                Must fill out all boxes
-                              </h4>
+                              <h4 style={{ color: 'orange' }}>Must fill out all boxes</h4>
                               <Heading size="xs" textTransform="uppercase">
                                 Preferred Name
                               </Heading>
@@ -320,9 +321,7 @@ function Profile() {
                             </Box>
                             <Heading size="md">Update Friend Settings</Heading>
                             <Box>
-                              <h4 style={{ color: 'orange' }}>
-                                Must fill out all boxes
-                              </h4>{' '}
+                              <h4 style={{ color: 'orange' }}>Must fill out all boxes</h4>{' '}
                               <Heading size="xs" textTransform="uppercase">
                                 Name
                               </Heading>
