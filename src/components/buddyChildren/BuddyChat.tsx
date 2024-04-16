@@ -76,6 +76,7 @@ function BuddyChat() {
         </div>
         <input
           type="text"
+          placeholder="Type BuddyMessage..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
