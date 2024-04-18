@@ -3,8 +3,9 @@ import React = require('react');
 import axios from 'axios';
 
 import { useContext, useEffect } from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
-import { Heading, Center, Container } from '@chakra-ui/react';
+import {
+  ChakraProvider, Heading, Center, Container,
+} from '@chakra-ui/react';
 import { UserContext, AuthUser } from '../context/UserContext';
 import Quote from './HomeComponents/Quote';
 
