@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 import io from 'socket.io-client';
-import { ChakraProvider } from '@chakra-ui/react';
-import { Heading, Center, Container } from '@chakra-ui/react';
+import {
+  ChakraProvider, Heading, Center, Container,
+} from '@chakra-ui/react';
+// import { Heading, Center, Container } from '@chakra-ui/react';
 
 const socket = io('http://localhost:3000');
 
 function BuddyChat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [room, setRoom] = useState('');
+  const { room } = useParams();
 
-  const joinRoom = () => {
+  useEffect(() => {
     if (room !== '') {
       socket.emit('join_room', room);
     }
-  };
+  }, [room]);
 
   const handleMessage = () => {
     // send a message comprised of user input
@@ -54,15 +58,15 @@ function BuddyChat() {
         </Heading>
       </Center>
       <Container maxW="7xl">
-        <input
+        {/* <input
           type="text"
           placeholder="BuddyPair ID"
           value={room}
           onChange={(e) => setRoom(e.target.value)}
-        />
-        <button type="button" onClick={joinRoom}>
+        /> */}
+        {/* <button type="button" onClick={joinRoom}>
           Join Room
-        </button>
+        </button> */}
         <div>
           {messages.map((message) => (
             // can use timestamps instead of Date

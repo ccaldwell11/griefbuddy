@@ -42,7 +42,7 @@ function App() {
         <Route path="/chatbot" element={<ChatBot />} />
         <Route path="/events" element={<Events />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/buddychat" element={<BuddyChat />} />
+        <Route path="/buddychat/:room" element={<BuddyChat />} />
         <Route path="/events/:id" element={<Event />} />
       </Routes>
     </UserContextProvider>
