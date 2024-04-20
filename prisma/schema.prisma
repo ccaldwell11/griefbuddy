@@ -127,14 +127,6 @@ model PendingRequest {
   requesterId Int
   requested   User @relation("Requested", fields: [requestedId], references: [id])
   requestedId Int
-}
-
-model FriendRequest {
-  id          Int     @id @default(autoincrement())
-  requester   User    @relation("Requester", fields: [requesterId], references: [id])
-  requesterId Int
-  requested   User    @relation("Requested", fields: [requestedId], references: [id])
-  requestedId Int
   accepted    Boolean @default(false)
 }
 

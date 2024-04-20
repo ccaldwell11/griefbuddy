@@ -65,6 +65,7 @@ function Buddy() {
     {},
   );
   const [buddiesOnline, setBuddiesOnline] = useState(0);
+  const [randomPairing, setRandomPairing] = useState<string>('');
 
   useEffect(() => {
     setFriends(rentAFriend);
@@ -124,6 +125,7 @@ function Buddy() {
         <Heading size="3l" color="blue.200">
           {`Hey ${user?.name.split(' ')[0]}✌️! 
           Here's your buddy for the week:`}
+          <p>buddy name here</p>
         </Heading>
         <Link to={`/buddychat/soup`}>
           Weekly Buddy Chat

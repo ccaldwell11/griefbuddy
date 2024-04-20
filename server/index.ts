@@ -20,6 +20,7 @@ const profileRouter = require('./routes/profile');
 const eventsRouter = require('./routes/events');
 const quotesRouter = require('./routes/quotes');
 const chatbotRouter = require('./routes/chatbot');
+const buddyRouter = require('./routes/buddy');
 
 app.use(express.json());
 
@@ -45,6 +46,7 @@ app.use('/profile', profileRouter);
 app.use('/events', eventsRouter);
 app.use('/quotes', quotesRouter);
 app.use('/chatbot', chatbotRouter);
+app.use('/buddy', buddyRouter);
 
 const checkAuth = (
   req: Request,
